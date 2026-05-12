@@ -19,6 +19,9 @@ public class App {
         Sistema.regiones.add( new Region("AMERICA DEL NORTE", "AM-NOR"));
         Sistema.regiones.add( new Region("EUROPA", "EU"));
         Sistema.regiones.add( new Region("ASIA", "AS"));
+        Sistema.regiones.add( new Region("AFRICA", "AF"));
+        Sistema.regiones.add( new Region("OCEANIA", "OC"));
+        Sistema.regiones.add( new Region("ANTARTIDA", "AT"));
         
         //Sistema.paises.add(new Pais("PERÚ", Sistema.regiones.getRegionxNombre("AMERICA DEL SUR") ));
         //Sistema.paises.add(new Pais("ECUADOR", Sistema.regiones.getRegionxNombre("AMERICA DEL SUR") ));

@@ -34,7 +34,7 @@ public class ControladorPaises {
             "TRINIDAD Y TOBAGO", "URUGUAY", "VENEZUELA"
         });
 
-        PAISES_POR_REGION.put("AMERICA DEL NORTE", new String[]{
+        PAISES_POR_REGION.put("AMERICA DEL NORTE Y CENTRAL", new String[]{
             "ANTIGUA Y BARBUDA", "BAHAMAS", "BARBADOS", "BELICE",
             "CANADÁ", "COSTA RICA", "CUBA", "DOMINICA",
             "EL SALVADOR", "ESTADOS UNIDOS", "GRANADA",
@@ -110,8 +110,8 @@ public class ControladorPaises {
         this.modelo = modelo;
         this.vista  = vista;
 
-        // ── Poblar cboRegion desde Sistema.regiones ───────────────────────────
-        // El combo viene vacío del diseñador; lo llenamos con las
+        // ── llenar cboRegion desde Sistema.regiones ───────────────────────────
+        // El combo viene vacío del diseñador; se llena con las
         // regiones que App.java registró en Sistema.regiones.
         String[] nombresRegiones = Sistema.regiones.getNombres();
         DefaultComboBoxModel<String> modeloRegiones = new DefaultComboBoxModel<>(nombresRegiones);
@@ -197,12 +197,7 @@ public class ControladorPaises {
         });
     }
 
-    // ── Métodos auxiliares ────────────────────────────────────────────────────
 
-    /**
-     * Rellena cboPaisesLista con los países que corresponden a la región
-     * actualmente seleccionada en cboRegion.
-     */
     private void actualizarListadoPaises() {
         String regionSeleccionada = vista.cboRegion.getSelectedItem() != null
                 ? vista.cboRegion.getSelectedItem().toString()

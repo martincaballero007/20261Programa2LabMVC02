@@ -27,7 +27,10 @@ public class ControladorInicio {
         this.vista.btnIngresar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Sistema.conectado = modelo.ingresar(vista.txtUsuario.getText() , vista.txtContraseña.getText());
+                String loginIngresado = vista.txtUsuario.getText().trim();
+                String passIngresada  = new String(vista.txtContraseña.getPassword());
+                Sistema.conectado = modelo.ingresarFlex(loginIngresado, passIngresada);
+                
                  if (Sistema.conectado != null ){
                     
                     vista.dispose();
@@ -36,7 +39,9 @@ public class ControladorInicio {
                                 new ControladorPaises(Sistema.paises, fPais);
                     controlador.iniciar();
                  }else {
-                     JOptionPane.showMessageDialog(vista, "Error de credenciales");
+                     JOptionPane.showMessageDialog(vista,
+                            "Error de credenciales.\n" +
+                            "Si desea acceso libre, use el usuario: invitado");
                      
                      
                  }

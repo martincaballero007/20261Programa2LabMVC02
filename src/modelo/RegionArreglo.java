@@ -1,51 +1,54 @@
-
 package modelo;
 
 public class RegionArreglo {
+
     Region regiones[];
     int indice;
 
     public RegionArreglo(int tamaño) {
         this.regiones = new Region[tamaño];
-        this.indice =0;
+        this.indice = 0;
     }
-    
-    public boolean add( Region o){
+
+    public boolean add(Region o) {
         boolean result = false;
-        if(this.indice< this.regiones.length){
+        if (this.indice < this.regiones.length) {
             this.regiones[this.indice] = o;
             this.indice++;
             result = true;
         }
-        return result;       
+        return result;
     }
-    
-    public Region getRegionxNombre( String nombre){
+
+    public Region getRegionxNombre(String nombre) {
         Region result = null;
-        for(int i=0; i < this.indice; i++){
-            if(this.regiones[i].getNombre().equalsIgnoreCase(nombre)){
-                result =  this.regiones[i] ;
+        for (int i = 0; i < this.indice; i++) {
+            if (this.regiones[i].getNombre().equalsIgnoreCase(nombre)) {
+                result = this.regiones[i];
                 break;
-            }    
+            }
         }
-        return result;       
+        return result;
     }
-        
+
+    /**
+     * getNombres() — devuelve un arreglo con los nombres de todas las
+     * regiones registradas. Lo usa ControladorPaises para poblar cboRegion.
+     */
+    public String[] getNombres() {
+        String[] result = new String[this.indice];
+        for (int i = 0; i < this.indice; i++) {
+            result[i] = this.regiones[i].getNombre();
+        }
+        return result;
+    }
+
     @Override
     public String toString() {
         String result = "ArregloRegion\n";
-        for(int i=0;i< this.indice ;i++){
+        for (int i = 0; i < this.indice; i++) {
             result += this.regiones[i] + "\n";
         }
         return result;
     }
-    
-    public Region[] getDatosCombo(){
-        Region result[] = new Region[this.indice];
-        for(int i=0; i< this.indice; i++ ){
-            result[i] = this.regiones[i];
-        }
-        return result; 
-    }
-    
 }

@@ -13,6 +13,7 @@ public class App {
         Sistema.usuarios.add( new Usuario("jperez", "123456","algo2.20202@gmail.com"));
         Sistema.usuarios.add( new Usuario("abartra", "secreto","algo2.20202@gmail.com"));
         Sistema.usuarios.add( new Usuario("fisi", "secreto","algo2.20202@gmail.com"));
+        Sistema.usuarios.add( new Usuario("invitado",  "",         ""));
         
         
         Sistema.regiones.add( new Region("AMERICA DEL SUR", "AM-SUR"));
